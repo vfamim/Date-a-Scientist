@@ -145,3 +145,181 @@ In this project Machine Learning was used to predict the Status  Relationship an
 | H6   | Black people represent 30% of the total user in a relationship status. |
 | H7   | 10% of user works in health field.                           |
 | H8   | 50% of the total user are straight.                          |
+
+
+
+# 3.0. Exploratory Data Analysis
+
+### 3.1. Univariate Analysis
+
+Explore the variable so we can check the frequency, distribution, range etc.
+
+#### 3.1.1. Target Variable
+
+![img1]()
+
+#### 3.1.2. Numerical variable distribution
+
+![img2]()
+
+#### 3.1.3. Categorical variable distribution
+
+![img3]()
+
+### 3.2. Bivariate Analysis
+
+The behavior of the variable with respect to the target variable.
+
+##### H1 Athletic and fit user represent 20% of the total users in relationship status.
+
+**TRUE**: Athletic and fit users represents 24.5% of the total user.
+
+![img4]()
+
+##### H2 Student user represent 50% of the total user in a relationship status.
+
+**TRUE**: Students represents 70% of users with a relationship.
+
+![img5]()
+
+##### H3 People who drink less represent 70% of the total user in a relationship status.
+
+**TRUE**: People who drinks less represent 83% of user with a relationship.
+
+![img6]()
+
+##### H4 Males and females are represented in a balanced way.
+
+**TRUE**: Males and females with relationship are balanced.
+
+![img7]()
+
+##### H5 20% of the total user don't care about sign.
+
+**TRUE**: 30.9% of the total user in relationship do not care about signs.
+
+![img8]()
+
+##### H6 Black people represent 30% of the total user in a relationship status.
+
+**FALSE**: Black people represents 1.6% of the total users in a relationship.
+
+![img9]()
+
+##### H7 10% of user works in health field.
+
+**FALSE**: Users who work in health field represents 4.4% of users with relationship.
+
+![img10]()
+
+##### H8 50% of the total user are straight.
+
+**TRUE**: 72.2% f users who are in a relationship consider themselves straight.
+
+![img11]()
+
+
+
+# 4.0. Machine Learning Modeling
+
+### 4.1. Models and Performance Metrics
+
+The following models were trained:
+
+* Dummy Classifier;
+* K-Nearest Neighbors;
+* Random Forest Classifier;
+* XGBoost Classifier;
+
+![img_metrics](https://github.com/vfamim/Date-a-Scientist/blob/master/img/1*UVP_xb4F6J-M-xH3haz5Jw.png)
+
+Here is a quick description of the metrics:
+
+- **Accuracy:** is the correct values divided by total values
+- **Precision:** is the True Positives divided by the sum of True Positives and False Negatives. So precision is the values of  the true positives divided by the actual positive values.
+- **Recall:** is the True Positives divided by the sum of True Positives and False Positives. So recall is the values of the true positives divided by the positive guesses.
+- **F1-score:** is a blended score of precision and recall which balances both values.
+- **Confusion Matrix:** is a 2x2 matrix that shows the predicted values of  the estimator with respect to the actual values.
+  - True Positive (TP): actual positives that are correctly predicted as positive;
+  - False Positive (FP): actual negatives that are wrongly predicted as positive;
+  - True Negative (TN): actual negatives that are correctly predicted as negative;
+  - False Negative (FN): actual positives that are wrongly predicted as negative.
+
+### 4.2. Model Results
+
+#### 4.2.1. Results
+
+The metric chosen will be F1-score.
+
+|           Accuracy | Precision |   Recall |           F1 |      ROC |          |
+| -----------------: | --------: | -------: | -----------: | -------: | -------- |
+|           Baseline |  0.044663 | 0.000000 | **0.000000** | 0.000000 | 0.500000 |
+|        K-Neighbors |  0.791113 | 0.961223 | **0.814193** | 0.881620 | 0.555815 |
+|      Random Forest |  0.943885 | 0.955664 | **0.987053** | 0.971105 | 0.503783 |
+| XGBoost Classifier |  0.953733 | 0.955683 | **0.997842** | 0.976308 | 0.504049 |
+
+| Baseline: Dummy Classifier | K-Neighbors Classifier |
+| -------------------------- | ---------------------- |
+| ![ml01]()                  | ![ml02]()              |
+
+| Random Forest Classifier | XGBoost Classifier |
+| ------------------------ | ------------------ |
+| ![ml3]()                 | ![ml4]()           |
+
+#### 4.2.2. Real results: Cross-Validation
+
+All cross-validation use 10-fold.
+
+|            test_Accuracy |  test_Precision |     test_Recall |         test_F1 |        test_ROC |                 |
+| -----------------------: | --------------: | --------------: | --------------: | --------------: | --------------- |
+|              K-Neighbors | 0.9008+/-0.0089 | 0.9845+/-0.0081 | 0.8144+/-0.0162 | 0.8914+/-0.0104 | 0.9008+/-0.0089 |
+| Random Forest Classifier | 0.9774+/-0.0869 | 0.9749+/-0.1389 | 0.9861+/-0.0067 | 0.9792+/-0.0756 | 0.9774+/-0.0869 |
+|       XGBoost Classifier | 0.9763+/-0.1356 | 0.9692+/-0.1907 | 0.9965+/-0.0045 | 0.9802+/-0.1112 | 0.9763+/-0.1356 |
+
+### 4.3. Fine Tuning: Grid Search
+
+Grid search is the process of performing hyper parameter tuning in order to determine the optimal values for a given model. This is significant as the performance of the entire model is based on the hyper parameter values specified. There are libraries that have been implemented, such as `GridSearchCV` of the `sklearn` library.
+
+#### 4.3.1. XGBoost Classifier Tuned Performance
+
+|                      | Accuracy | Precision |   Recall |       F1 | ROC     |
+| -------------------: | -------: | --------: | -------: | -------: | ------- |
+| XGBoost Classifier + | 0.953733 |  0.955683 | 0.997842 | 0.976308 | 0.50404 |
+
+![ml_final]()
+
+### 4.3.2. Cross Validation Final Model
+
+|                      |   test_Accuracy |  test_Precision |     test_Recall |         test_F1 |        test_ROC |
+| -------------------: | --------------: | --------------: | --------------: | --------------: | --------------: |
+| XGBoost Classifier + | 0.9763+/-0.1356 | 0.9692+/-0.1907 | 0.9965+/-0.0045 | 0.9802+/-0.1112 | 0.9763+/-0.1356 |
+
+
+
+# 5.0. Business Performance
+
+### 5.1. Final Results
+
+|             Accuracy | Precision |   Recall |       F1 |      ROC |          |
+| -------------------: | --------: | -------: | -------: | -------: | -------- |
+|             Baseline |  0.044663 | 0.000000 | 0.000000 | 0.000000 | 0.500000 |
+|          K-Neighbors |  0.791113 | 0.961223 | 0.814193 | 0.881620 | 0.555815 |
+|        Random Forest |  0.943885 | 0.955664 | 0.987053 | 0.971105 | 0.503783 |
+|   XGBoost Classifier |  0.953733 | 0.955683 | 0.997842 | 0.976308 | 0.504049 |
+| XGBoost Classifier + |  0.953733 | 0.955683 | 0.997842 | 0.976308 | 0.504049 |
+
+### 5.2. Final Real Results
+
+|                          |   test_Accuracy |  test_Precision |     test_Recall |             test_F1 |        test_ROC |
+| -----------------------: | --------------: | --------------: | --------------: | ------------------: | --------------: |
+|      Logistic Regression | 0.9008+/-0.0089 | 0.9845+/-0.0081 | 0.8144+/-0.0162 | **0.8914+/-0.0104** | 0.9008+/-0.0089 |
+| Random Forest Classifier | 0.9774+/-0.0869 | 0.9749+/-0.1389 | 0.9861+/-0.0067 | **0.9792+/-0.0756** | 0.9774+/-0.0869 |
+|       XGBoost Classifier | 0.9763+/-0.1356 | 0.9692+/-0.1907 | 0.9965+/-0.0045 | **0.9802+/-0.1112** | 0.9763+/-0.1356 |
+|     XGBoost Classifier + | 0.9763+/-0.1356 | 0.9692+/-0.1907 | 0.9965+/-0.0045 | **0.9802+/-0.1112** | 0.9763+/-0.1356 |
+
+# 6.0. Next Steps
+
+1. Model deployment;
+2. New features;
+3. Model's hyper parameters experiment and evaluation.
+
