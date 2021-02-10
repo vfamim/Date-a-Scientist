@@ -131,7 +131,7 @@ In this project Machine Learning was used to predict the Status  Relationship an
 
 # 2.0. Hypotheses Creation
 
-![hypo]() 
+![hypo](https://github.com/vfamim/Date-a-Scientist/blob/master/img/Relationship_status.png) 
 
 ### 2.1. Summary
 
@@ -156,15 +156,15 @@ Explore the variable so we can check the frequency, distribution, range etc.
 
 #### 3.1.1. Target Variable
 
-![img1]()
+![img1](https://github.com/vfamim/Date-a-Scientist/blob/master/img/img01.svg)
 
 #### 3.1.2. Numerical variable distribution
 
-![img2]()
+![img2](https://github.com/vfamim/Date-a-Scientist/blob/master/img/img02.svg)
 
 #### 3.1.3. Categorical variable distribution
 
-![img3]()
+![img3](https://github.com/vfamim/Date-a-Scientist/blob/master/img/img03.svg)
 
 ### 3.2. Bivariate Analysis
 
@@ -174,49 +174,49 @@ The behavior of the variable with respect to the target variable.
 
 **TRUE**: Athletic and fit users represents 24.5% of the total user.
 
-![img4]()
+![img4](https://github.com/vfamim/Date-a-Scientist/blob/master/img/img04.svg)
 
 ##### H2 Student user represent 50% of the total user in a relationship status.
 
 **TRUE**: Students represents 70% of users with a relationship.
 
-![img5]()
+![img5](https://github.com/vfamim/Date-a-Scientist/blob/master/img/img05.svg)
 
 ##### H3 People who drink less represent 70% of the total user in a relationship status.
 
 **TRUE**: People who drinks less represent 83% of user with a relationship.
 
-![img6]()
+![img6](https://github.com/vfamim/Date-a-Scientist/blob/master/img/img06.svg)
 
 ##### H4 Males and females are represented in a balanced way.
 
 **TRUE**: Males and females with relationship are balanced.
 
-![img7]()
+![img7](https://github.com/vfamim/Date-a-Scientist/blob/master/img/img07.svg)
 
 ##### H5 20% of the total user don't care about sign.
 
 **TRUE**: 30.9% of the total user in relationship do not care about signs.
 
-![img8]()
+![img8](https://github.com/vfamim/Date-a-Scientist/blob/master/img/img08.svg)
 
 ##### H6 Black people represent 30% of the total user in a relationship status.
 
 **FALSE**: Black people represents 1.6% of the total users in a relationship.
 
-![img9]()
+![img9](https://github.com/vfamim/Date-a-Scientist/blob/master/img/img09.svg)
 
 ##### H7 10% of user works in health field.
 
 **FALSE**: Users who work in health field represents 4.4% of users with relationship.
 
-![img10]()
+![img10](https://github.com/vfamim/Date-a-Scientist/blob/master/img/img10.svg)
 
 ##### H8 50% of the total user are straight.
 
 **TRUE**: 72.2% f users who are in a relationship consider themselves straight.
 
-![img11]()
+![img11](https://github.com/vfamim/Date-a-Scientist/blob/master/img/img11.svg)
 
 
 
@@ -258,13 +258,13 @@ The metric chosen will be F1-score.
 |      Random Forest |  0.943885 | 0.955664 | **0.987053** | 0.971105 | 0.503783 |
 | XGBoost Classifier |  0.953733 | 0.955683 | **0.997842** | 0.976308 | 0.504049 |
 
-| Baseline: Dummy Classifier | K-Neighbors Classifier |
-| -------------------------- | ---------------------- |
-| ![ml01]()                  | ![ml02]()              |
+| Baseline: Dummy Classifier                                   | K-Neighbors Classifier                                       |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![ml01](https://github.com/vfamim/Date-a-Scientist/blob/master/img/ml1.svg) | ![ml02](https://github.com/vfamim/Date-a-Scientist/blob/master/img/ml2.svg) |
 
-| Random Forest Classifier | XGBoost Classifier |
-| ------------------------ | ------------------ |
-| ![ml3]()                 | ![ml4]()           |
+| Random Forest Classifier                                     | XGBoost Classifier                                           |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![ml3](https://github.com/vfamim/Date-a-Scientist/blob/master/img/ml3.svg) | ![ml4](https://github.com/vfamim/Date-a-Scientist/blob/master/img/ml4.svg) |
 
 #### 4.2.2. Real results: Cross-Validation
 
@@ -286,7 +286,7 @@ Grid search is the process of performing hyper parameter tuning in order to dete
 | -------------------: | -------: | --------: | -------: | -------: | ------- |
 | XGBoost Classifier + | 0.953733 |  0.955683 | 0.997842 | 0.976308 | 0.50404 |
 
-![ml_final]()
+![ml_final](https://github.com/vfamim/Date-a-Scientist/blob/master/img/ml_final.svg)
 
 ### 4.3.2. Cross Validation Final Model
 
