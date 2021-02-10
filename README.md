@@ -1,3 +1,13 @@
+# Table of contents
+
+- [Introduction](#introduction)
+- [1.0. About the Data](#10-about-the-data)
+- [2.0. Hypotheses Creation](#20-hypotheses-creation)
+- [3.0. Exploratory Data Analysis](#30-exploratory-data-analysis)
+- [4.0. Machine Learning Modeling](#40-machine-learning-modeling)
+- [5.0. Business Performance](#50-business-performance)
+- [6.0. Next Steps](#60-next-steps)
+
 # Introduction
 
 This project analyzes data from on-line dating application OKCupid.  In recent years, there has been a massive rise in the usage of dating  apps to find love. Many of these apps use sophisticated data science  techniques to recommend possible matches to users and to optimize the  user experience. These apps give us access to a wealth of information  that we've never had before about how different people experience  romance.
